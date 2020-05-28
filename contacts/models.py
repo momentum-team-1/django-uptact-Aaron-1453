@@ -19,3 +19,16 @@ class Contact(models.Model):
     city = models.CharField(max_length=255, null=True, blank=True)
     state = USStateField(null=True, blank=True)
     zip_code = USZipCodeField(null=True, blank=True)
+    company_name = models.CharField(max_length=255, null=True, blank=True)
+    birthday = models.DateField(max_length=255, null=True, blank=True)
+
+
+class Address(models.Model): 
+    line_1 = models.CharField(max_length=255, null=True, blank=True)
+    line_2 = models.CharField(max_length=255, null=True, blank=True)
+    city = models.CharField(max_length=255, null=True, blank=True)
+    state = USStateField(null=True, blank=True)
+    zip_code = USZipCodeField(null=True, blank=True)
+    company_name = models.CharField(max_length=255, null=True, blank=True)
+    birthday = models.DateField(max_length=255, null=True, blank=True)
+    
