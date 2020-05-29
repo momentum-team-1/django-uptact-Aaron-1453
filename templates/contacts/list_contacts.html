@@ -8,6 +8,7 @@
   <div class="w-33 pa3">
     <h2>{{ contact.name }}</h2>
     <h3>{{ contact.company_name }}</h3>
+    <h4>{{ contact.favorite_color }}</h4>
     <div class="flex">
       <div class="pr2"><i class="icofont-location-pin"></i></div>
       <div>
@@ -16,9 +17,17 @@
         {% if contact.address_2 %} 
         {{ contact.address_2 }}
         <br />
-        {% endif %} {{ contact.city }}, 
+        {% endif %} 
+
+        {{ contact.city }}, 
         {{ contact.state }} 
         {{ contact.zip_code }}
+        
+        <div>
+          {% if contact.species %}
+          {{ contact.species }}
+          {% endif %}
+        </div>
       </div>
     </div>
 
@@ -27,14 +36,19 @@
       <div class="pr2"><i class="icofont-phone"></i></div>
       <div>{{ contact.phone_number }}</div>
     </div>
-    {% endif %} {% if contact.email %}
+    {% endif %}
+    
+    {% if contact.email %}
     <div class="flex">
       <div class="pr2"><i class="icofont-ui-email"></i></div>
       <div>{{ contact.email }}</div>
     </div>
-    {% endif %} {% if contact.birthday %}
+    {% endif %} 
+
+    {% if contact.birthday %}
     <div>{{contact.birthday}}</div>
     {% endif %}
+
     <p>
       <a href="{% url 'edit_contact' pk=contact.pk %}">Edit Contact</a><br />
       <a class="red" href="{% url 'delete_contact' pk=contact.pk %}"

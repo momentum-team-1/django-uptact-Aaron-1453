@@ -21,6 +21,8 @@ class Contact(models.Model):
     zip_code = USZipCodeField(null=True, blank=True)
     company_name = models.CharField(max_length=255, null=True, blank=True)
     birthday = models.DateField(max_length=255, null=True, blank=True)
+    favorite_color = models.CharField(max_length=255, null=True, blank=True)
+    species = models.CharField(max_length=255, null=True, blank=True)
 
 
 class Address(models.Model): 
